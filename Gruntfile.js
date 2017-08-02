@@ -41,18 +41,30 @@ module.exports = function(grunt) {
       }
     },
 
+    uglify: {
+      my_target: {
+        files: {
+          'assets/js/app.min.js': ['assets/src/data-cards.js']
+        }
+      }
+    },
+
 		watch: {
 			css: {
 				files: '**/*.scss',
 				tasks: ['sass']
 			},
       cssmin: {
-				files: '**/*.css',
+				files: 'assets/css/main.css',
 				tasks: ['cssmin']
 			},
       icons: {
 				files: 'assets/icons/*.svg',
 				tasks: ['svgstore']
+			},
+      uglify: {
+				files: 'assets/src/*.js',
+				tasks: ['uglify']
 			}
 		}
   });
@@ -62,6 +74,7 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('icons', ['svgstore']);
   grunt.registerTask('default',['watch']);

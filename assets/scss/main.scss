@@ -1,3 +1,12 @@
-.svgstore {
-  display: none;
-}
+// variables and mixins
+@import "variables";
+@import "mixins";
+
+// use some Bootstrap stuff
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_buttons.scss";
+
+// the rest of teh styles
+@import "type";
+@import "data-cards";
+@import "app-layout";

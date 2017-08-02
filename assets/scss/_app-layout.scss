@@ -1,0 +1,27 @@
+.app {
+  display: flex;
+
+  .package {
+    @include rev-out;
+    padding: $base-spacing;
+
+    & > div {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .logo {
+      svg {
+        height: 44px;
+        width: 44px*4.193;
+      }
+    }
+  }
+  .resources {
+    padding-left: $base-spacing;
+    padding-right: $base-spacing;
+  }
+  .preview {
+
+  }
+}
