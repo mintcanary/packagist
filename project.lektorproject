@@ -1,2 +1,7 @@
 [project]
-name = Project Name
+name = Packagist
+
+[servers.ghpages]
+enabled = yes
+default = yes
+target = ghpages://smth/packagist
