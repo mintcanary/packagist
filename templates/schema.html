@@ -7,55 +7,248 @@
       <a class="logo">
         {% include 'includes/logo.svg' %}
       </a>
-      <button class="btn btn-success">Load data package</button>
+      <button class="btn btn-lg btn-success">Load data package</button>
+
+      <div class="panel-group" id="package-data" role="tablist" aria-multiselectable="true">
+        <div class="panel">
+          <div class="panel-heading" role="tab" id="required-metadata-heading">
+            <h4 class="panel-title">
+              <a role="button" data-toggle="collapse" data-parent="#package-data" href="#required-metadata" aria-expanded="true" aria-controls="required-metadata">
+                Required metadata
+              </a>
+            </h4>
+          </div>
+          <div id="required-metadata" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="required-metadata-heading">
+            <div class="panel-body">
+              <label class="control-label">Profile</label>
+              <select data-id="list-container" class="form-control list-container" autocomplete="off"><option value="base">Data Package</option><option value="tabular">Tabular Data Package</option><option value="fiscal">Fiscal Data Package</option></select>
+
+              <label class="control-label">Title</label>
+              <input class="form-control" name="root[title]" type="text">
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-heading" role="tab" id="optional-metadata-heading">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#package-data" href="#optional-metadata" aria-expanded="false" aria-controls="optional-metadata">
+                Optional metadata
+              </a>
+            </h4>
+          </div>
+          <div id="optional-metadata" class="panel-collapse collapse" role="tabpanel" aria-labelledby="optional-metadata-heading">
+            <div class="panel-body">
+              <label class="control-label">Name</label>
+              <input class="form-control" pattern="^([a-z0-9._-])+$" name="root[name]" type="text">
+
+              <label class="control-label">Description</label>
+              <textarea class="form-control" data-schemaformat="textarea" name="root[description]"></textarea>
+
+              <label class="control-label">Home Page</label>
+              <input class="form-control" name="root[homepage]" type="text">
+
+              <label class="control-label">Version</label>
+              <input class="form-control" name="root[version]" type="text">
+
+              <label class="control-label">License</label>
+              <input class="form-control" name="root[license]" type="text">
+
+              <label class="control-label">Author</label>
+              <input class="form-control" name="root[author]" type="text">
+            </div>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel-heading" role="tab" id="keywords-heading">
+            <h4 class="panel-title">
+              <a class="collapsed" role="button" data-toggle="collapse" data-parent="#package-data" href="#keywords" aria-expanded="false" aria-controls="keywords">
+                Keywords
+              </a>
+            </h4>
+          </div>
+          <div id="keywords" class="panel-collapse collapse" role="tabpanel" aria-labelledby="keywords-heading">
+            <div class="panel-body">
+              <button type="button" class="btn btn-info btn-sm json-editor-btn-add " title="Add item"><svg><use xlink:href="#icon-plus" /></svg> item</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
   <section class="resources">
-    <div class="data-cards">
-      {% set counter = 1 -%}
-      {% for c in bag('data-file')['data'] %}
-      <div class="draggable card" id="column_{{ counter  + loop.index0 }}">
-        <div class="inner">
-          <header>
-            <span class="drag"><svg><use xlink:href="#icon-drag" /></svg></span>
-            <h3 class="heading">{{ c['heading'] }}</h3>
-            <button type="button" class="action" aria-label="Remove"><svg><use xlink:href="#icon-trashcan" /></svg></button>
-          </header>
 
-          <div class="preview">
-            <ol>
-              {% for l, value in c['preview'].iteritems() %}
-              <li>
-                <span>{{ value }}</span>
-              </li>
+    <div class="panel-group" id="resources-data" role="tablist" aria-multiselectable="true">
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="resource-one-heading">
+          <h4 class="panel-title">
+            <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              Resource one
+            </a>
+          </h4>
+        </div>
+        <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="resource-one-heading">
+          <div class="panel-body">
+            <div class="data-cards">
+              {% set counter = 1 -%}
+              {% for c in bag('data-file-1')['data'] %}
+              <div class="draggable card" id="column_{{ counter  + loop.index0 }}">
+                <div class="inner">
+                  <header>
+                    <span class="drag"><svg><use xlink:href="#icon-drag" /></svg></span>
+                    <h3 class="heading">{{ c['heading'] }}</h3>
+                    <button type="button" class="action" aria-label="Remove"><svg><use xlink:href="#icon-trashcan" /></svg></button>
+                  </header>
+
+                  <div class="preview">
+                    <ol>
+                      {% for l, value in c['preview'].iteritems() %}
+                      <li>
+                        <span>{{ value }}</span>
+                      </li>
+                      {% endfor %}
+                    </ol>
+                  </div>
+
+                  <div class="field-info">
+                    <label for="title_{{ counter + loop.index0 }}">Title</label>
+                    <input type="text" value="{{ c['heading'] | replace("_", " ") | replace("-", " ") }}" id="title_{{ counter + loop.index0 }}">
+
+                    <label for="description_{{ counter + loop.index0 }}">Description</label>
+                    <textarea id="description_{{ counter + loop.index0 }}">{% if c['description'] %}{{ c['description'] }}{% endif %}</textarea>
+                    <label for="type_{{ counter + loop.index0 }}">Data Type</label>
+                    <input type="text" id="type_{{ counter + loop.index0 }}"{% if c['datatype'] %} value="{{ c['datatype'] }}"{% endif %}>
+                    <label for="format_{{ counter + loop.index0 }}">Format</label>
+                    <input type="text" id="type_{{ counter + loop.index0 }}"{% if c['dataformat'] %} value="{{ c['datatype'] }}"{% endif %}>
+                  </div>
+
+                </div>
+              </div>
               {% endfor %}
-            </ol>
+              <div class="add card">
+                <a class="inner">
+                  <svg><use xlink:href="#icon-plus" /></svg> Add item
+                </a>
+              </div>
+            </div>
           </div>
-
-          <div class="field-info">
-            <label for="title_{{ counter + loop.index0 }}">Title</label>
-            <input type="text" value="{{ c['heading'] | replace("_", " ") | replace("-", " ") }}" id="title_{{ counter + loop.index0 }}">
-
-            <label for="description_{{ counter + loop.index0 }}">Description</label>
-            <textarea id="description_{{ counter + loop.index0 }}">{% if c['description'] %}{{ c['description'] }}{% endif %}</textarea>
-            <label for="type_{{ counter + loop.index0 }}">Data Type</label>
-            <input type="text" id="type_{{ counter + loop.index0 }}"{% if c['datatype'] %} value="{{ c['datatype'] }}"{% endif %}>
-            <label for="format_{{ counter + loop.index0 }}">Format</label>
-            <input type="text" id="type_{{ counter + loop.index0 }}"{% if c['dataformat'] %} value="{{ c['datatype'] }}"{% endif %}>
-          </div>
-
         </div>
       </div>
-      {% endfor %}
-      <div class="add card">
-        <a class="inner">
-          <svg><use xlink:href="#icon-plus" /></svg> Add item
-        </a>
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="resource-two-heading">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              Resource two
+            </a>
+          </h4>
+        </div>
+        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="resource-two-heading">
+          <div class="panel-body">
+            <div class="data-cards">
+              {% set counter = 1 -%}
+              {% for c in bag('data-file-2')['data'] %}
+              <div class="draggable card" id="column_{{ counter  + loop.index0 }}">
+                <div class="inner">
+                  <header>
+                    <span class="drag"><svg><use xlink:href="#icon-drag" /></svg></span>
+                    <h3 class="heading">{{ c['heading'] }}</h3>
+                    <button type="button" class="action" aria-label="Remove"><svg><use xlink:href="#icon-trashcan" /></svg></button>
+                  </header>
+
+                  <div class="preview">
+                    <ol>
+                      {% for l, value in c['preview'].iteritems() %}
+                      <li>
+                        <span>{{ value }}</span>
+                      </li>
+                      {% endfor %}
+                    </ol>
+                  </div>
+
+                  <div class="field-info">
+                    <label for="title_{{ counter + loop.index0 }}">Title</label>
+                    <input type="text" value="{{ c['heading'] | replace("_", " ") | replace("-", " ") }}" id="title_{{ counter + loop.index0 }}">
+
+                    <label for="description_{{ counter + loop.index0 }}">Description</label>
+                    <textarea id="description_{{ counter + loop.index0 }}">{% if c['description'] %}{{ c['description'] }}{% endif %}</textarea>
+                    <label for="type_{{ counter + loop.index0 }}">Data Type</label>
+                    <input type="text" id="type_{{ counter + loop.index0 }}"{% if c['datatype'] %} value="{{ c['datatype'] }}"{% endif %}>
+                    <label for="format_{{ counter + loop.index0 }}">Format</label>
+                    <input type="text" id="type_{{ counter + loop.index0 }}"{% if c['dataformat'] %} value="{{ c['datatype'] }}"{% endif %}>
+                  </div>
+
+                </div>
+              </div>
+              {% endfor %}
+              <div class="add card">
+                <a class="inner">
+                  <svg><use xlink:href="#icon-plus" /></svg> Add item
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="panel">
+        <div class="panel-heading" role="tab" id="resource-three-heading">
+          <h4 class="panel-title">
+            <a class="collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              Resource three
+            </a>
+          </h4>
+        </div>
+        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="resource-three-heading">
+          <div class="panel-body">
+            <div class="data-cards">
+              {% set counter = 1 -%}
+              {% for c in bag('data-file-3')['data'] %}
+              <div class="draggable card" id="column_{{ counter  + loop.index0 }}">
+                <div class="inner">
+                  <header>
+                    <span class="drag"><svg><use xlink:href="#icon-drag" /></svg></span>
+                    <h3 class="heading">{{ c['heading'] }}</h3>
+                    <button type="button" class="action" aria-label="Remove"><svg><use xlink:href="#icon-trashcan" /></svg></button>
+                  </header>
+
+                  <div class="preview">
+                    <ol>
+                      {% for l, value in c['preview'].iteritems() %}
+                      <li>
+                        <span>{{ value }}</span>
+                      </li>
+                      {% endfor %}
+                    </ol>
+                  </div>
+
+                  <div class="field-info">
+                    <label for="title_{{ counter + loop.index0 }}">Title</label>
+                    <input type="text" value="{{ c['heading'] | replace("_", " ") | replace("-", " ") }}" id="title_{{ counter + loop.index0 }}">
+
+                    <label for="description_{{ counter + loop.index0 }}">Description</label>
+                    <textarea id="description_{{ counter + loop.index0 }}">{% if c['description'] %}{{ c['description'] }}{% endif %}</textarea>
+                    <label for="type_{{ counter + loop.index0 }}">Data Type</label>
+                    <input type="text" id="type_{{ counter + loop.index0 }}"{% if c['datatype'] %} value="{{ c['datatype'] }}"{% endif %}>
+                    <label for="format_{{ counter + loop.index0 }}">Format</label>
+                    <input type="text" id="type_{{ counter + loop.index0 }}"{% if c['dataformat'] %} value="{{ c['datatype'] }}"{% endif %}>
+                  </div>
+
+                </div>
+              </div>
+              {% endfor %}
+              <div class="add card">
+                <a class="inner">
+                  <svg><use xlink:href="#icon-plus" /></svg> Add item
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
+
   </section>
   <section class="preview">
-    right
+    <svg class="icon"><use xlink:href="#icon-braces" /></svg>
   </section>
 </div>
 {% endblock %}

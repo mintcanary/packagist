@@ -1,0 +1,49 @@
+{
+  "data":[
+    {
+      "heading": "Niveau 1",
+      "preview": {
+        "line_one": "E Exploitatie",
+        "line_two": "E Exploitatie",
+        "line_three": "E Exploitatie",
+        "line_four": "E Exploitatie",
+        "line_five": "E Exploitatie",
+        "line_six": "E Exploitatie",
+        "line_seven": "E Exploitatie",
+        "line_eight": "E Exploitatie",
+        "line_nine": "E Exploitatie",
+        "line_ten": "E Exploitatie"
+      }
+    },
+    {
+      "heading": "Niveau 2",
+      "preview": {
+        "line_one": "E.I Exploitatie-uitgaven",
+        "line_two": "E.I Exploitatie-uitgaven",
+        "line_three": "E.I Exploitatie-uitgaven",
+        "line_four": "E.I Exploitatie-uitgaven",
+        "line_five": "E.I Exploitatie-uitgaven",
+        "line_six": "E.I Exploitatie-uitgaven",
+        "line_seven": "E.I Exploitatie-uitgaven",
+        "line_eight": "E.I Exploitatie-uitgaven",
+        "line_nine": "E.I Exploitatie-uitgaven",
+        "line_ten": "E.I Exploitatie-uitgaven"
+      }
+    },
+    {
+      "heading": "Niveau 3",
+      "preview": {
+        "line_one": "E.I.A Operationele uitgaven",
+        "line_two": "E.I.A Operationele uitgaven",
+        "line_three": "E.I.A Operationele uitgaven",
+        "line_four": "E.I.A Operationele uitgaven",
+        "line_five": "E.I.A Operationele uitgaven",
+        "line_six": "E.I.A Operationele uitgaven",
+        "line_seven": "E.I.A Operationele uitgaven",
+        "line_eight": "E.I.A Operationele uitgaven",
+        "line_nine": "E.I.A Operationele uitgaven",
+        "line_ten": "E.I.A Operationele uitgaven"
+      }
+    }
+  ]
+}

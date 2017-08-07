@@ -1,10 +1,23 @@
-@mixin rev-out($bg:$primary-colour, $col:#fff) {
+@mixin rev-out($bg:$brand-primary, $col:$body-bg) {
   color: $col;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: $bg;
 
+  a {
+    color: $col;
+  }
+
   svg {
-    fill: $col;
+    fill: currentColor;
+  }
+
+  .btn {
+    &:hover,
+    &:focus,
+    &.focus {
+      background-color: $col;
+      color: $bg;
+    }
   }
 }

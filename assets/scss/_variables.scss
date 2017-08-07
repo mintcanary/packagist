@@ -1,8 +1,6 @@
-$primary-colour: #008A47;
 
-$base-spacing: 20px;
+// Bootstrap (not all used)
 
-// Bootstrap
 $bootstrap-sass-asset-helper: false !default;
 //
 // Variables
@@ -17,10 +15,10 @@ $gray-base:              #000 !default;
 $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:              lighten($gray-base, 20%) !default;   // #333
 $gray:                   lighten($gray-base, 33.5%) !default; // #555
-$gray-light:             lighten($gray-base, 46.7%) !default; // #777
+$gray-light:             #F2F2F2 !default;
 $gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
 
-$brand-primary:         $primary-colour !default;
+$brand-primary:         #008A47 !default;
 $brand-success:         #15BC53 !default;
 $brand-info:            #0B5E28 !default;
 $brand-warning:         #f0ad4e !default;
@@ -48,15 +46,15 @@ $link-hover-decoration: underline !default;
 //
 //## Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:  "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:  frictionlessdata, "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 //** Default monospace fonts for `<code>`, `<kbd>`, and `<pre>`.
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 
 $font-size-base:          14px !default;
-$font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
-$font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+$font-size-large:         16px !default;
+$font-size-small:         12px !default;
 
 $font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
 $font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
@@ -112,9 +110,9 @@ $padding-xs-horizontal:     5px !default;
 $line-height-large:         1.3333333 !default; // extra decimals for Win 8.1 Chrome
 $line-height-small:         1.5 !default;
 
-$border-radius-base:        4px !default;
-$border-radius-large:       6px !default;
-$border-radius-small:       3px !default;
+$border-radius-base:        2px !default;
+$border-radius-large:       3px !default;
+$border-radius-small:       1px !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
 $component-active-color:    #fff !default;
@@ -182,7 +180,7 @@ $btn-link-disabled-color:        $gray-light !default;
 
 // Allows for customizing button radius independently from global border radius
 $btn-border-radius-base:         $border-radius-base !default;
-$btn-border-radius-large:        $border-radius-large !default;
+$btn-border-radius-large:        $border-radius-base  !default;
 $btn-border-radius-small:        $border-radius-small !default;
 
 
@@ -334,7 +332,7 @@ $screen-md-max:              ($screen-lg-min - 1) !default;
 //** Number of columns in the grid.
 $grid-columns:              12 !default;
 //** Padding between columns. Gets divided in half for the left and right.
-$grid-gutter-width:         30px !default;
+$grid-gutter-width:         20px !default;
 // Navbar collapse
 //** Point at which the navbar becomes uncollapsed.
 $grid-float-breakpoint:     $screen-sm-min !default;
@@ -712,8 +710,8 @@ $list-group-link-heading-color: #333 !default;
 //
 //##
 
-$panel-bg:                    #fff !default;
-$panel-body-padding:          15px !default;
+$panel-bg:                    transparent !default;
+$panel-body-padding:          $grid-gutter-width !default;
 $panel-heading-padding:       10px 15px !default;
 $panel-footer-padding:        $panel-heading-padding !default;
 $panel-border-radius:         $border-radius-base !default;

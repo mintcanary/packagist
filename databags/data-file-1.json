@@ -1,0 +1,49 @@
+{
+  "data":[
+    {
+      "heading": "Naam bestuur",
+      "preview": {
+        "line_one": "Aalst",
+        "line_two": "Aalst",
+        "line_three": "Aalst",
+        "line_four": "Aalst",
+        "line_five": "Aalst",
+        "line_six": "Aalst",
+        "line_seven": "Aalst",
+        "line_eight": "Aalst",
+        "line_nine": "Aalst",
+        "line_ten": "Aalst"
+      }
+    },
+    {
+      "heading": "KBO-nummer",
+      "preview": {
+        "line_one": "207437468",
+        "line_two": "207437468",
+        "line_three": "207437468",
+        "line_four": "207437468",
+        "line_five": "207437468",
+        "line_six": "207437468",
+        "line_seven": "207437468",
+        "line_eight": "207437468",
+        "line_nine": "207437468",
+        "line_ten": "207437468"
+      }
+    },
+    {
+      "heading": "Boekjaar",
+      "preview": {
+        "line_one": "2014",
+        "line_two": "2014",
+        "line_three": "2014",
+        "line_four": "2014",
+        "line_five": "2014",
+        "line_six": "2014",
+        "line_seven": "2014",
+        "line_eight": "2014",
+        "line_nine": "2014",
+        "line_ten": "2014"
+      }
+    }
+  ]
+}

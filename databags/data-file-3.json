@@ -1,0 +1,49 @@
+{
+  "data":[
+    {
+      "heading": "Niveau 4",
+      "preview": {
+        "line_one": "E.I.A.1 Goederen en diensten",
+        "line_two": "E.I.A.1 Goederen en diensten",
+        "line_three": "E.I.A.1 Goederen en diensten",
+        "line_four": "E.I.A.1 Goederen en diensten",
+        "line_five": "E.I.A.1 Goederen en diensten",
+        "line_six": "E.I.A.1 Goederen en diensten",
+        "line_seven": "E.I.A.1 Goederen en diensten",
+        "line_eight": "E.I.A.1 Goederen en diensten",
+        "line_nine": "E.I.A.1 Goederen en diensten",
+        "line_ten": "E.I.A.1 Goederen en diensten"
+      }
+    },
+    {
+      "heading": "AR met omschrijving",
+      "preview": {
+        "line_one": "REK600 Aankopen van grondstoffen, hulpstoffen en handelsgoederen",
+        "line_two": "REK600 Aankopen van grondstoffen, hulpstoffen en handelsgoederen",
+        "line_three": "REK600 Aankopen van grondstoffen, hulpstoffen en handelsgoederen",
+        "line_four": "REK600 Aankopen van grondstoffen, hulpstoffen en handelsgoederen",
+        "line_five": "REK600 Aankopen van grondstoffen, hulpstoffen en handelsgoederen",
+        "line_six": "REK600 Aankopen van grondstoffen, hulpstoffen en handelsgoederen",
+        "line_seven": "REK600 Aankopen van grondstoffen, hulpstoffen en handelsgoederen",
+        "line_eight": "REK600 Aankopen van grondstoffen, hulpstoffen en handelsgoederen",
+        "line_nine": "REK600 Aankopen van grondstoffen, hulpstoffen en handelsgoederen",
+        "line_ten": "REK600 Aankopen van grondstoffen, hulpstoffen en handelsgoederen"
+      }
+    },
+    {
+      "heading": "BV Niveau A",
+      "preview": {
+        "line_one": "01 Algemeen bestuur",
+        "line_two": "05 Ondernemen en werken",
+        "line_three": "05 Ondernemen en werken",
+        "line_four": "07 Cultuur en vrije tijd",
+        "line_five": "07 Cultuur en vrije tijd",
+        "line_six": "07 Cultuur en vrije tijd",
+        "line_seven": "07 Cultuur en vrije tijd",
+        "line_eight": "08 Leren en onderwijs",
+        "line_nine": "09 Zorg en opvang",
+        "line_ten": "09 Zorg en opvang"
+      }
+    }
+  ]
+}

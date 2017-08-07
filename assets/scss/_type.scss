@@ -179,7 +179,16 @@
 }
 
 body {
-  font-family: frictionlessdata;
   font-feature-settings:"lnum" 1;
   text-rendering: optimizeLegibility;
+}
+
+p,
+.btn {
+	svg {
+		width: 1em;
+		height: 1em;
+		display: inline-block;
+		vertical-align: text-top;
+	}
 }

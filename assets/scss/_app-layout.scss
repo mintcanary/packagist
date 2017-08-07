@@ -1,27 +1,87 @@
 .app {
-  display: flex;
+  @media screen and (min-width: $screen-sm) {
+    display: flex;
+    min-height: 100vh;
+  }
 
-  .package {
+  section.package {
     @include rev-out;
-    padding: $base-spacing;
 
     & > div {
       display: flex;
       flex-direction: column;
+      padding: $grid-gutter-width;
+
+      @media screen and (min-width: $screen-sm) {
+        width: 300px;
+      }
     }
 
     .logo {
+      margin-top: $grid-gutter-width*0.5;
+      margin-bottom: $grid-gutter-width*1.5;
+
       svg {
         height: 44px;
         width: 44px*4.193;
       }
     }
-  }
-  .resources {
-    padding-left: $base-spacing;
-    padding-right: $base-spacing;
-  }
-  .preview {
 
+    .btn {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  section.resources {
+    flex-grow: 1;
+
+    .card {
+      display: block;
+      width: 100%;
+      @include make-sm-column(6, 0);
+      @include make-md-column(4, 0);
+      @include make-lg-column(3, 0);
+
+      .inner {
+        border-radius: $border-radius-base;
+      }
+    }
+
+    .panel-body {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+  }
+
+  section.preview {
+    display: none;
+
+    @media screen and (min-width: $screen-sm) {
+      display: block;
+      background-color: $gray-light;
+      border-left: solid 1px darken($gray-light,10%);
+      padding: $grid-gutter-width $grid-gutter-width/2;
+    }
+
+    .icon {
+      width: 1.5em;
+      height: 1.5em;
+      fill: currentColor;
+    }
+  }
+
+  &.code-view {
+    section.resources {
+      .card {
+        @include make-sm-column(12, 0);
+        @include make-md-column(6, 0);
+        @include make-lg-column(4, 0);
+      }
+    }
+
+    section.preview {
+      width: 50%;
+    }
   }
 }
