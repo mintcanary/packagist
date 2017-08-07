@@ -4,9 +4,13 @@
 
 // use some Bootstrap stuff
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_buttons.scss";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_component-animations";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_scaffolding";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_buttons";
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_forms";
 
-// the rest of teh styles
+// the rest of the styles
 @import "type";
 @import "data-cards";
+@import "panels";
 @import "app-layout";
