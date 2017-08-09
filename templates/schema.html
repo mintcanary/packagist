@@ -3,18 +3,21 @@
 {% block body %}
 <div class="app">
   <section class="package">
-    <div>
-      <a class="logo">
-        {% include 'includes/logo.svg' %}
-      </a>
-      <button class="btn btn-lg btn-success">Load data package</button>
+    <div class="inner">
+
+      <div class="start">
+        <a class="logo">
+          {% include 'includes/logo.svg' %}
+        </a>
+        <button class="btn btn-lg btn-success">Load data package</button>
+      </div>
 
       <div class="panel-group" id="package-data" role="tablist" aria-multiselectable="true">
         <div class="panel">
           <div class="panel-heading" role="tab" id="required-metadata-heading">
             <h4 class="panel-title">
               <a role="button" data-toggle="collapse" data-parent="#package-data" href="#required-metadata" aria-expanded="true" aria-controls="required-metadata">
-                Required metadata
+                <span class="text">Required metadata </span><span class="icon"><svg><use xlink:href="#icon-expand" /></svg></span>
               </a>
             </h4>
           </div>
@@ -32,7 +35,7 @@
           <div class="panel-heading" role="tab" id="optional-metadata-heading">
             <h4 class="panel-title">
               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#package-data" href="#optional-metadata" aria-expanded="false" aria-controls="optional-metadata">
-                Optional metadata
+                <span class="text">Optional metadata </span><span class="icon"><svg><use xlink:href="#icon-expand" /></svg></span>
               </a>
             </h4>
           </div>
@@ -62,7 +65,7 @@
           <div class="panel-heading" role="tab" id="keywords-heading">
             <h4 class="panel-title">
               <a class="collapsed" role="button" data-toggle="collapse" data-parent="#package-data" href="#keywords" aria-expanded="false" aria-controls="keywords">
-                Keywords
+                <span class="text">Keywords </span><span class="icon"><svg><use xlink:href="#icon-expand" /></svg></span>
               </a>
             </h4>
           </div>
@@ -74,18 +77,37 @@
         </div>
       </div>
 
+      <div class="validate-download">
+        <button class="btn btn-lg btn-success">Download</button>
+        <button class="btn btn-lg btn-info">Validate</button>
+      </div>
+
     </div>
+
   </section>
   <section class="resources">
+    <header class="section-heading">
+      <h2>Resources</h2>
+    </header>
 
     <div class="panel-group" id="resources-data" role="tablist" aria-multiselectable="true">
       <div class="panel">
         <div class="panel-heading" role="tab" id="resource-one-heading">
-          <h4 class="panel-title">
-            <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Resource one
+          <div class="title">
+            <label>Title</label>
+            <input class="form-control" autocomplete="off" type="text">
+          </div>
+          <div class="actions">
+            <a class="settings-button">
+              <svg><use xlink:href="#icon-settings" /></svg><span class="text">Settings</span>
             </a>
-          </h4>
+            <a role="button" data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <svg><use xlink:href="#icon-expand" /></svg><span class="text">Expand / collapse</span>
+            </a>
+          </div>
+          <div class="settings">
+            {% include 'includes/settings.html' %}
+          </div>
         </div>
         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="resource-one-heading">
           <div class="panel-body">
@@ -136,11 +158,24 @@
       </div>
       <div class="panel">
         <div class="panel-heading" role="tab" id="resource-two-heading">
-          <h4 class="panel-title">
-            <a class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              Resource two
+          <div class="title">
+            <label>Title</label>
+            <input class="form-control" autocomplete="off" type="text">
+          </div>
+          <div class="actions">
+            <a>
+              <svg><use xlink:href="#icon-trashcan" /></svg><span class="text">Remove</span>
             </a>
-          </h4>
+            <a class="settings-button">
+              <svg><use xlink:href="#icon-settings" /></svg><span class="text">Settings</span>
+            </a>
+            <a class="collapsed" role="button" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <svg><use xlink:href="#icon-expand" /></svg><span class="text">Expand / collapse</span>
+            </a>
+          </div>
+          <div class="settings">
+            {% include 'includes/settings.html' %}
+          </div>
         </div>
         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="resource-two-heading">
           <div class="panel-body">
@@ -191,11 +226,24 @@
       </div>
       <div class="panel">
         <div class="panel-heading" role="tab" id="resource-three-heading">
-          <h4 class="panel-title">
-            <a class="collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              Resource three
+          <div class="title">
+            <label>Title</label>
+            <input class="form-control" autocomplete="off" type="text">
+          </div>
+          <div class="actions">
+            <a>
+              <svg><use xlink:href="#icon-trashcan" /></svg><span class="text">Remove</span>
             </a>
-          </h4>
+            <a class="settings-button">
+              <svg><use xlink:href="#icon-settings" /></svg><span class="text">Settings</span>
+            </a>
+            <a class="collapsed" role="button" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <svg><use xlink:href="#icon-expand" /></svg><span class="text">Expand / collapse</span>
+            </a>
+          </div>
+          <div class="settings">
+            {% include 'includes/settings.html' %}
+          </div>
         </div>
         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="resource-three-heading">
           <div class="panel-body">
@@ -246,9 +294,14 @@
       </div>
     </div>
 
+    <a class="add resource">
+      <svg><use xlink:href="#icon-plus" /></svg> Add another data file
+    </a>
+
   </section>
   <section class="preview">
-    <svg class="icon"><use xlink:href="#icon-braces" /></svg>
+    <h2 class="section-heading"><svg class="icon"><use xlink:href="#icon-braces" /></svg><span class="text">Preview</span></h2>
+    <pre><code class="language-json">{% include 'includes/data.json' %}</code></pre>
   </section>
 </div>
 {% endblock %}

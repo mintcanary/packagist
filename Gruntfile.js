@@ -30,21 +30,10 @@ module.exports = function(grunt) {
       }
     },
 
-    cssmin: {
-      options: {
-        sourceMap: true
-      },
-      target: {
-        files: {
-          'assets/css/style.css': ['node_modules/normalize.css/normalize.css', 'assets/css/main.css']
-        }
-      }
-    },
-
     uglify: {
       my_target: {
         files: {
-          'assets/js/app.min.js': ['assets/src/data-cards.js']
+          'assets/js/app.min.js': ['assets/src/data-cards.js', 'assets/src/app-layout.js', 'node_modules/prismjs/prism.js', 'node_modules/prismjs/components/prism-json.js']
         }
       }
     },
@@ -53,10 +42,6 @@ module.exports = function(grunt) {
 			css: {
 				files: '**/*.scss',
 				tasks: ['sass']
-			},
-      cssmin: {
-				files: 'assets/css/main.css',
-				tasks: ['cssmin']
 			},
       icons: {
 				files: 'assets/icons/*.svg',
@@ -73,7 +58,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-svgstore');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
   grunt.registerTask('icons', ['svgstore']);

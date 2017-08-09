@@ -1,0 +1,16 @@
+<span>
+  <label class="control-label">Name</label>
+  <input class="form-control" pattern="^([a-z0-9._-])+$" name="root[resources][0][name]" autocomplete="off" type="text">
+  <label class="control-label">Path</label>
+  <input class="form-control" name="root[resources][0][path]" autocomplete="off" type="text">
+  <label class="control-label">Format</label>
+  <input class="form-control" name="root[resources][0][format]" autocomplete="off" type="text">
+  <label class="control-label">Media Type</label>
+  <input class="form-control" pattern="^(.+)/(.+)$" name="root[resources][0][mediatype]" autocomplete="off" type="text">
+  <label class="control-label">Encoding</label>
+  <input class="form-control" name="root[resources][0][encoding]" autocomplete="off" type="text">
+</span>
+<span>
+  <label class="control-label">Description</label>
+  <textarea class="form-control" data-schemaformat="textarea" name="root[resources][0][description]"></textarea>
+</span>

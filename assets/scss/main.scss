@@ -1,16 +1,25 @@
 // variables and mixins
 @import "variables";
 @import "mixins";
-
-// use some Bootstrap stuff
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/mixins";
+
+// normalize
+@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_normalize";
+
+// some Bootstrap stuff
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_component-animations";
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_scaffolding";
 @import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_buttons";
-@import "../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_forms";
 
 // the rest of the styles
 @import "type";
+@import "forms";
 @import "data-cards";
 @import "panels";
 @import "app-layout";
+@import "code";
+
+// remove Lektor link - below can be removed in production
+#lektor-edit-link {
+  display: none;
+}

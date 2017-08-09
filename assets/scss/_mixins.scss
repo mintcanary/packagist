@@ -9,7 +9,7 @@
   }
 
   svg {
-    fill: currentColor;
+    fill: $col;
   }
 
   .btn {
@@ -18,6 +18,13 @@
     &.focus {
       background-color: $col;
       color: $bg;
+      border-color: $col;
     }
+  }
+
+  .form-control {
+    background-color: darken($bg,4%);
+    border-color: darken($bg,4%);
+    color: $col;
   }
 }

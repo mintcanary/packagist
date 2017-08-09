@@ -1,3 +1,7 @@
+# Packagist Mockup
+
+[Preview](http://p.smth.uk/packagist/)
+
 This site is built with [Lektor](https://www.getlektor.com/).
 
 It has a bunch of [dependencies](package.json), so do `npm install` and then `npm run build`.

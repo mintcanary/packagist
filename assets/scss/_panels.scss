@@ -7,7 +7,6 @@
 .panel {
   margin-bottom: $line-height-computed;
   background-color: $panel-bg;
-  border: 1px solid transparent;
   border-radius: $panel-border-radius;
 }
 
@@ -20,8 +19,7 @@
 // Optional heading
 .panel-heading {
   padding: $panel-heading-padding;
-  border-bottom: 1px solid transparent;
-  @include border-top-radius(($panel-border-radius - 1));
+  border-top: solid 1px $panel-inner-border;
 
   > .dropdown .dropdown-toggle {
     color: inherit;
@@ -51,16 +49,12 @@
 // the help of our collapse JavaScript plugin.
 
 .panel-group {
-  margin-bottom: $line-height-computed;
+  border-bottom: solid 1px $panel-inner-border;
 
   // Tighten up margin so it's only between panels
   .panel {
     margin-bottom: 0;
     border-radius: $panel-border-radius;
-
-    + .panel {
-      margin-top: 5px;
-    }
   }
 
   .panel-heading {

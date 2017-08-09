@@ -16,7 +16,7 @@ $gray-darker:            lighten($gray-base, 13.5%) !default; // #222
 $gray-dark:              lighten($gray-base, 20%) !default;   // #333
 $gray:                   lighten($gray-base, 33.5%) !default; // #555
 $gray-light:             #F2F2F2 !default;
-$gray-lighter:           lighten($gray-base, 93.5%) !default; // #eee
+$gray-lighter:           #F9F9F9 !default;
 
 $brand-primary:         #008A47 !default;
 $brand-success:         #15BC53 !default;
@@ -208,7 +208,7 @@ $input-border-radius-large:      $border-radius-large !default;
 $input-border-radius-small:      $border-radius-small !default;
 
 //** Border color for inputs on focus
-$input-border-focus:             #66afe9 !default;
+$input-border-focus:             $brand-primary !default;
 
 //** Placeholder text color
 $input-color-placeholder:        #999 !default;
@@ -712,12 +712,12 @@ $list-group-link-heading-color: #333 !default;
 
 $panel-bg:                    transparent !default;
 $panel-body-padding:          $grid-gutter-width !default;
-$panel-heading-padding:       10px 15px !default;
+$panel-heading-padding:       10px $panel-body-padding !default;
 $panel-footer-padding:        $panel-heading-padding !default;
-$panel-border-radius:         $border-radius-base !default;
+$panel-border-radius:         0 !default;
 
 //** Border color for elements within panels
-$panel-inner-border:          #ddd !default;
+$panel-inner-border:          rgba(#000,0.15) !default;
 $panel-footer-bg:             #f5f5f5 !default;
 
 $panel-default-text:          $gray-dark !default;
