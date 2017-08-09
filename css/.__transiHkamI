@@ -1379,22 +1379,17 @@ select[multiple].input-lg {
   .app section.package a {
     color: #fff; }
   .app section.package svg {
-    fill: #fff; }
+    fill: currentColor; }
   .app section.package .btn:hover, .app section.package .btn:focus, .app section.package .btn.focus {
     background-color: #fff;
-    color: #008A47;
-    border-color: #fff; }
-  .app section.package .form-control {
-    background-color: #00763d;
-    border-color: #00763d;
-    color: #fff; }
+    color: #008A47; }
   .app section.package .inner {
     display: flex;
-    flex-direction: column;
-    min-height: 100vh; }
+    flex-direction: column; }
     @media screen and (min-width: 768px) {
       .app section.package .inner {
-        width: 300px; } }
+        width: 300px;
+        min-height: 100vh; } }
     .app section.package .inner .logo {
       display: block;
       margin-top: 10px;
@@ -1435,6 +1430,10 @@ select[multiple].input-lg {
       margin-top: 6px; }
       .app section.package .inner .control-label:first-child {
         margin-top: 0; }
+    .app section.package .inner .form-control {
+      background-color: #007b3f;
+      border-color: #007b3f;
+      color: #fff; }
     .app section.package .inner > div {
       padding: 20px; }
       .app section.package .inner > div.start {
@@ -1450,19 +1449,13 @@ select[multiple].input-lg {
   flex-grow: 1;
   display: flex;
   flex-direction: column; }
-  .app section.resources .section-heading {
-    padding: 20px; }
-    .app section.resources .section-heading h2 {
-      margin: 0;
-      font-size: 16px; }
   .app section.resources .panel:nth-child(odd) {
     background: #F9F9F9; }
   .app section.resources .panel-heading {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-right: 10px;
-    position: relative; }
+    padding-right: 10px; }
     .app section.resources .panel-heading .title label {
       display: block;
       font: 0/0 a;
@@ -1471,93 +1464,31 @@ select[multiple].input-lg {
       background-color: transparent;
       border: 0;
       margin: 0; }
-    .app section.resources .panel-heading .actions {
-      display: flex; }
-      .app section.resources .panel-heading .actions a {
-        color: #555555;
+    .app section.resources .panel-heading .actions a {
+      color: #555555;
+      display: inline-block;
+      text-decoration: none;
+      padding: 5px;
+      width: 1.5em;
+      height: 1.5em; }
+      .app section.resources .panel-heading .actions a:hover {
+        color: #008A47; }
+      .app section.resources .panel-heading .actions a svg {
+        fill: currentColor;
+        width: 100%;
+        height: 100%; }
+      .app section.resources .panel-heading .actions a .text {
         display: inline-block;
-        text-decoration: none;
-        width: 2.5em;
-        height: 1.5em;
-        text-align: center;
-        position: relative;
-        z-index: 1; }
-        .app section.resources .panel-heading .actions a:hover {
-          color: #008A47; }
-        .app section.resources .panel-heading .actions a svg {
-          fill: currentColor;
-          width: 1.5em;
-          height: 100%; }
-        .app section.resources .panel-heading .actions a .text {
-          display: inline-block;
-          font: 0/0 a;
-          color: transparent;
-          text-shadow: none;
-          background-color: transparent;
-          border: 0; }
-        .app section.resources .panel-heading .actions a.active {
-          background-color: #333333;
-          color: #fff; }
-          .app section.resources .panel-heading .actions a.active:before {
-            content: '';
-            display: block;
-            background-color: #333333;
-            width: 3em;
-            height: 3em;
-            position: absolute;
-            z-index: -1;
-            top: -0.5em;
-            left: 50%;
-            margin-left: -1.5em;
-            border-radius: 2px; }
-        .app section.resources .panel-heading .actions a.collapsed > svg {
-          -webkit-transform: rotate(-90deg);
-          -ms-transform: rotate(-90deg);
-          -o-transform: rotate(-90deg);
-          transform: rotate(-90deg); }
-    .app section.resources .panel-heading .settings {
-      position: absolute;
-      right: 3vw;
-      top: 3.5em;
-      color: #fff;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      background-color: #333333;
-      width: 94vw;
-      border-radius: 2px;
-      z-index: 1;
-      padding: 10px;
-      display: none; }
-      .app section.resources .panel-heading .settings a {
-        color: #fff; }
-      .app section.resources .panel-heading .settings svg {
-        fill: #fff; }
-      .app section.resources .panel-heading .settings .btn:hover, .app section.resources .panel-heading .settings .btn:focus, .app section.resources .panel-heading .settings .btn.focus {
-        background-color: #fff;
-        color: #333333;
-        border-color: #fff; }
-      .app section.resources .panel-heading .settings .form-control {
-        background-color: #292929;
-        border-color: #292929;
-        color: #fff; }
-      .app section.resources .panel-heading .settings span {
-        flex-basis: 50%;
-        padding: 10px;
-        display: flex;
-        flex-direction: column; }
-        .app section.resources .panel-heading .settings span .control-label {
-          margin-top: 6px; }
-          .app section.resources .panel-heading .settings span .control-label:first-child {
-            margin-top: 0; }
-        .app section.resources .panel-heading .settings span textarea {
-          flex-grow: 1; }
-      @media screen and (min-width: 768px) {
-        .app section.resources .panel-heading .settings {
-          width: 33vw;
-          min-width: 400px;
-          right: -2px; } }
-      .app section.resources .panel-heading .settings.active {
-        display: flex; }
+        font: 0/0 a;
+        color: transparent;
+        text-shadow: none;
+        background-color: transparent;
+        border: 0; }
+      .app section.resources .panel-heading .actions a.collapsed > svg {
+        -webkit-transform: rotate(-90deg);
+        -ms-transform: rotate(-90deg);
+        -o-transform: rotate(-90deg);
+        transform: rotate(-90deg); }
   .app section.resources .card {
     display: block;
     width: 100%;
@@ -1629,20 +1560,18 @@ select[multiple].input-lg {
       -o-transition: width 0.3s;
       transition: width 0.3s; } }
   .app section.preview .section-heading {
-    font-size: 16px;
+    font-size: inherit;
     margin: 0;
     padding: 20px 10px;
     -webkit-transition: padding 0.15s;
     -o-transition: padding 0.15s;
     transition: padding 0.15s; }
     .app section.preview .section-heading .icon {
-      width: 1.4em;
-      height: 1.4em;
-      fill: #555555; }
+      width: 1.5em;
+      height: 1.5em;
+      fill: currentColor; }
       .app section.preview .section-heading .icon:hover {
         fill: #008A47; }
-    .app section.preview .section-heading .text {
-      display: none; }
   .app section.preview pre {
     visibility: hidden;
     height: 0;
@@ -1677,20 +1606,6 @@ select[multiple].input-lg {
   .app.code-view section.preview .section-heading {
     padding-left: 20px;
     padding-right: 20px; }
-    .app.code-view section.preview .section-heading .icon {
-      display: none; }
-    .app.code-view section.preview .section-heading .text {
-      display: block; }
-      .app.code-view section.preview .section-heading .text:before {
-        content: '';
-        display: inline-block;
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0.5em 0 0.5em 0.6em;
-        border-color: transparent transparent transparent #555555;
-        opacity: 0.7;
-        margin-right: 0.6em; }
   .app.code-view section.preview pre {
     visibility: visible;
     height: auto;
