@@ -18,8 +18,3 @@
 @import "panels";
 @import "app-layout";
 @import "code";
-
-// remove Lektor link - below can be removed in production
-#lektor-edit-link {
-  display: none;
-}
