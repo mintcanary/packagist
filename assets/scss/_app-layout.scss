@@ -20,13 +20,29 @@
       }
 
       .logo {
-        display: block;
-        margin-top: $grid-gutter-width*0.5;
+        display: flex;
         margin-bottom: $grid-gutter-width*1.5;
 
         svg {
-          height: 44px;
-          width: 44px*4.193;
+          width: 132px;
+          height: 34px;
+          margin: 24px 0 0 20px;
+        }
+
+        .fd {
+          background-color: $brand-success;
+          width: 70px;
+          height: 75px;
+          flex-shrink: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          svg {
+            width: 22px;
+            height: 34px;
+            margin: 0;
+          }
         }
       }
 
@@ -86,6 +102,7 @@
         padding: $grid-gutter-width;
 
         &.start {
+          padding-top: 0;
           margin-bottom: $padding-large-vertical;
         }
 
