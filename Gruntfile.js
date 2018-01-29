@@ -30,6 +30,18 @@ module.exports = function(grunt) {
       }
     },
 
+    postcss: {
+      options: {
+        map: true,
+        processors: [
+          require('autoprefixer')
+        ]
+      },
+      dist: {
+        src: 'assets/css/*.css'
+      }
+    },
+
     uglify: {
       my_target: {
         files: {
@@ -41,7 +53,7 @@ module.exports = function(grunt) {
 		watch: {
 			css: {
 				files: '**/*.scss',
-				tasks: ['sass']
+				tasks: ['sass', 'postcss:dist']
 			},
       icons: {
 				files: 'assets/icons/*.svg',
@@ -57,6 +69,7 @@ module.exports = function(grunt) {
   // Load the plugins
   grunt.loadNpmTasks('grunt-svgstore');
   grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-uglify');
 
