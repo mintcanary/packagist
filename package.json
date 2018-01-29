@@ -3,12 +3,14 @@
     "build": "grunt icons && grunt sass && grunt uglify"
   },
   "devDependencies": {
+    "autoprefixer": "^7.2.5",
     "bootstrap-sass": "^3.3.7",
     "grunt": "^1.0.1",
     "grunt-contrib-cssmin": "^1.0.2",
     "grunt-contrib-sass": "^1.0.0",
     "grunt-contrib-uglify": "^3.0.1",
     "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.9.0",
     "grunt-svgstore": "^1.0.0",
     "prismjs": "^1.6.0"
   },
